@@ -314,13 +314,10 @@ int main()
     char input[64];
     printf("Grammar definition:\n");
     printf("(0) <A> -> <B><E>\n");
-    printf("(1) <B> -> b\n");
-    printf("(2) <B> -> <C>\n");
-    printf("(3) <C> -> c<D>\n");
-    printf("(4) <D> -> <C>\n");
-    printf("(5) <D> -> NULL\n");
-    printf("(6) <E> -> (<E>)\n");
-    printf("(7) <E> -> e\n");
+    printf("(1) <B> -> b | <C>\n");
+    printf("(2) <C> -> c<D>\n");
+    printf("(3) <D> -> <C> | NULL\n");
+    printf("(4) <E> -> (<E>) | e\n");
     printf("\nEnter string (recursive descent):\n");
     scanf("%s", &input);
 
@@ -390,4 +387,5 @@ TREE makeNode4(char x, TREE t1, TREE t2, TREE t3, TREE t4)
     t3->rightSibling = t4;
     return root;
 }
+
 
